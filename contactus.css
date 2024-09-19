@@ -1,0 +1,152 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #1f1c2c, #928dab);
+    overflow: hidden;
+}
+
+/* Background Animation */
+body::before {
+    content: '';
+    position: absolute;
+    width: 200vw;
+    height: 200vh;
+    background: radial-gradient(circle at 50%, rgba(255,255,255,0.1), transparent 40%);
+    animation: moveBackground 15s infinite linear;
+    z-index: -1;
+}
+
+@keyframes moveBackground {
+    0% {
+        transform: translate(-50%, -50%);
+    }
+    100% {
+        transform: translate(50%, 50%);
+    }
+}
+
+/* Container */
+.contact-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    z-index: 1;
+}
+
+.contact-card {
+    background: rgba(18, 18, 18, 0.8);
+    padding: 50px;
+    border-radius: 20px;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
+    text-align: center;
+    position: relative;
+    z-index: 10;
+    width: 400px;
+    backdrop-filter: blur(20px);
+}
+
+.contact-card h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+/* Input Fields with Neon Effect */
+.neon-input-field {
+    position: relative;
+    margin-bottom: 35px;
+}
+
+.neon-input-field input,
+.neon-input-field textarea {
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid #333;
+    padding: 10px;
+    width: 100%;
+    color: #fff;
+    font-size: 16px;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.neon-input-field input:focus,
+.neon-input-field textarea:focus {
+    border-bottom-color: #00ffc3;
+    box-shadow: 0 0 10px #00ffc3, 0 0 20px #00ffc3;
+}
+
+.neon-input-field label {
+    position: absolute;
+    top: 10px;
+    left: 0;
+    font-size: 16px;
+    color: #aaa;
+    pointer-events: none;
+    transition: 0.3s ease;
+}
+
+.neon-input-field input:focus ~ label,
+.neon-input-field input:not(:placeholder-shown) ~ label,
+.neon-input-field textarea:focus ~ label,
+.neon-input-field textarea:not(:placeholder-shown) ~ label {
+    top: -20px;
+    font-size: 12px;
+    color: #00ffc3;
+}
+
+.neon-bar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    background-color: #00ffc3;
+    width: 0;
+    transition: width 0.4s;
+}
+
+.neon-input-field input:focus ~ .neon-bar,
+.neon-input-field textarea:focus ~ .neon-bar {
+    width: 100%;
+}
+
+/* Button with Neon Effect */
+.neon-btn {
+    background: linear-gradient(90deg, #00ffc3, #1f9cff);
+    border: none;
+    padding: 12px 30px;
+    font-size: 16px;
+    color: #fff;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 0 15px #00ffc3, 0 0 30px #1f9cff;
+    transition: all 0.4s ease;
+}
+
+.neon-btn:hover {
+    background: linear-gradient(90deg, #1f9cff, #00ffc3);
+    box-shadow: 0 0 25px #00ffc3, 0 0 50px #1f9cff;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .contact-card {
+        width: 90%;
+    }
+}

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback Form</title>
+    <link rel="stylesheet" href="feedback.css">
+</head>
+<body>
+
+    <div class="feedback-container">
+        <div class="feedback-card">
+            <h2>Give Us Your Feedback</h2>
+            <form action="#" method="POST">
+
+                <!-- Name Input -->
+                <div class="feedback-input-field">
+                    <input type="text" id="name" name="name" required>
+                    <label for="name">Your Name</label>
+                    <span class="feedback-bar"></span>
+                </div>
+
+                <!-- Email Input -->
+                <div class="feedback-input-field">
+                    <input type="email" id="email" name="email" required>
+                    <label for="email">Your Email</label>
+                    <span class="feedback-bar"></span>
+                </div>
+
+                <!-- Rating Input (Stars) -->
+                <div class="feedback-rating">
+                    <p>Rate Us:</p>
+                    <div class="stars">
+                        <input type="radio" name="star" id="star1" value="5"><label for="star1"></label>
+                        <input type="radio" name="star" id="star2" value="4"><label for="star2"></label>
+                        <input type="radio" name="star" id="star3" value="3"><label for="star3"></label>
+                        <input type="radio" name="star" id="star4" value="2"><label for="star4"></label>
+                        <input type="radio" name="star" id="star5" value="1"><label for="star5"></label>
+                    </div>
+                </div>
+
+                <!-- Comments Input -->
+                <div class="feedback-input-field">
+                    <textarea id="comments" name="comments" rows="4" required></textarea>
+                    <label for="comments">Your Comments</label>
+                    <span class="feedback-bar"></span>
+                </div>
+
+                <!-- Submit Button -->
+                <button class="feedback-btn" type="submit">Submit Feedback</button>
+
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>
